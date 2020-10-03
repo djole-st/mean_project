@@ -1,0 +1,31 @@
+<div style="width: 600px;position: relative;float: left;">
+    <div *ngFor = "let co of contacts">
+        <div style="width: 100px;position: relative;float: left;margin-right: 30px;margin-bottom: 10px;">
+            {{co.first_name}}
+        </div>
+        <div style="width: 100px;position: relative;float: left;margin-right: 30px;margin-bottom: 10px;">
+            {{co.last_name}}
+        </div> 
+        <div style="width: 100px;position: relative;float: left;margin-right: 30px;margin-bottom: 10px;">
+            {{co.phone}}
+        </div>
+        <div style="width: 100px;position: relative;float: left;margin-right: 30px;margin-bottom: 10px;">
+            <input type="button" value="Delete" (click)="deteleContact(co._id)">
+        </div>
+    </div>
+
+</div>
+
+<div style="clear: both;"></div>
+<h2>Dodavalica novog</h2>
+
+<div>
+    <form (submit) = "addContact()">
+        FN - <input type="text" name="first_name" [(ngModel)] = "first_name"><br>
+        LN - <input type="text" name="last_name" [(ngModel)] = "last_name"><br>
+        Phone - <input type="text" name="phone" [(ngModel)] = "phone"><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
